@@ -30,9 +30,11 @@ jobs:
       env:
         ANDROID_HOME: /usr/local/lib/android/sdk
         ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+        JDK_JAVA_OPTIONS: '--add-opens=java.base/sun.reflect.annotation=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED'
+        GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx4096m --add-opens=java.base/sun.reflect.annotation=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"'
       run: |
         chmod +x gradlew
-        ./gradlew android:assembleDebug -Pbuildversion=146 --no-daemon -Dorg.gradle.jvmargs="-Xmx4g" --stacktrace
+        ./gradlew android:assembleDebug -Pbuildversion=146 --stacktrace
 
     - name: Upload WarIran APK Artifact
       uses: actions/upload-artifact@v4
