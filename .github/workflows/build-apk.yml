@@ -25,11 +25,11 @@ jobs:
         distribution: 'zulu'
         java-version: '17'
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-
     - name: Build Android APK
       working-directory: WARIRAN
+      env:
+        ANDROID_HOME: /usr/local/lib/android/sdk
+        ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
       run: |
         chmod +x gradlew
         ./gradlew android:assembleDebug -Pbuildversion=146 --stacktrace
