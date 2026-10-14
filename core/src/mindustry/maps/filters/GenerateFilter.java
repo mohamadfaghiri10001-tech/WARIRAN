@@ -13,7 +13,7 @@ import mindustry.gen.*;
 import mindustry.world.*;
 import mindustry.world.blocks.environment.*;
 
-public abstract class GenerateFilter implements Cloneable, AllowSerialization{
+public abstract class GenerateFilter implements Cloneable,{
     public int seed = 0;
 
     public void apply(Tiles tiles, GenerateInput in){
