@@ -25,6 +25,12 @@ jobs:
         distribution: 'zulu'
         java-version: '17'
 
+    - name: Publish Arc v146 to Local Maven
+      working-directory: Arc
+      run: |
+        chmod +x gradlew
+        ./gradlew publishToMavenLocal -x test
+
     - name: Build Android APK
       working-directory: WARIRAN
       env:
