@@ -32,7 +32,7 @@ jobs:
         ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
       run: |
         chmod +x gradlew
-        ./gradlew android:assembleDebug -Pbuildversion=146 --stacktrace
+        ./gradlew android:assembleDebug -Pbuildversion=146 --no-daemon -Dorg.gradle.jvmargs="-Xmx4g" --stacktrace
 
     - name: Upload WarIran APK Artifact
       uses: actions/upload-artifact@v4
