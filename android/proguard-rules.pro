@@ -1,7 +1,11 @@
 -dontobfuscate
+-dontshrink
+-dontoptimize
 
 -keep class mindustry.** { *; }
+-keep interface mindustry.** { *; }
 -keep class arc.** { *; }
+-keep interface arc.** { *; }
 -keep class net.jpountz.** { *; }
 -keep class rhino.** { *; }
 -keep class com.android.dex.** { *; }
