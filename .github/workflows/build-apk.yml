@@ -1,4 +1,4 @@
-  name: Build War Iran APK
+name: Build War Iran APK
 
 on:
   push:
