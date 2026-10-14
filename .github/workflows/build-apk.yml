@@ -32,10 +32,10 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Android APK
-        run: ./gradlew :android:assembleRelease --stacktrace
+        run: ./gradlew :android:assembleDebug --stacktrace
 
       - name: Upload War Iran APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: WarIran-Final-APK
-          path: android/build/outputs/apk/release/*.apk
+          path: android/build/outputs/apk/debug/*.apk
