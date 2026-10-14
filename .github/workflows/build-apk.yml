@@ -29,7 +29,7 @@ jobs:
       working-directory: Arc
       run: |
         chmod +x gradlew
-        ./gradlew publishToMavenLocal -x test
+        ./gradlew publishToMavenLocal -x test -x javadoc
 
     - name: Build Android APK
       working-directory: WARIRAN
