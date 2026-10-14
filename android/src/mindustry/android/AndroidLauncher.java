@@ -323,8 +323,15 @@ public class AndroidLauncher extends AndroidApplication{
         }
     }
 
-    private boolean isTablet(Context context){
+            private boolean isTablet(Context context){
         TelephonyManager manager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
         return manager != null && manager.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE;
     }
+
+    public void addListener(arc.ApplicationListener listener){
+    }
+
+    public void removeListener(arc.ApplicationListener listener){
+    }
 }
+
