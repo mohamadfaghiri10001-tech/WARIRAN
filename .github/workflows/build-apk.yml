@@ -29,7 +29,13 @@ jobs:
       working-directory: Arc
       run: |
         chmod +x gradlew
-        ./gradlew publishToMavenLocal -x test -x javadoc
+        ./gradlew publishToMavenLocal -x test -x javadoc -Pbuildversion=v146
+
+    - name: Inject mavenLocal repository
+      working-directory: WARIRAN
+      run: |
+        # Ensure mavenLocal() is at the top of buildscript and allprojects repositories
+        sed -i 's/repositories {/repositories { mavenLocal()/g' build.gradle
 
     - name: Build Android APK
       working-directory: WARIRAN
