@@ -15,6 +15,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Clone Arc with exact hash
+        run: |
+          git clone https://github.com/Anuken/Arc.git ../Arc
+          cd ../Arc
+          git checkout 7445105cd2
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
